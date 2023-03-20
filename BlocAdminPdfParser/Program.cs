@@ -26,11 +26,11 @@ namespace BlocAdminPdfParser
                 if (String.IsNullOrWhiteSpace(arg))
                     continue;
 
-                TryProcessPdf(arg);
+                TryProcessPdf(arg, includeInfo: false, includeTable: true, includeDump: false);
             }
         }
 
-        private static Boolean TryProcessPdf(String filePath)
+        private static Boolean TryProcessPdf(String filePath, Boolean includeInfo, Boolean includeTable, Boolean includeDump)
         {
             try
             {
@@ -180,19 +180,23 @@ namespace BlocAdminPdfParser
                                 }
                             }
 
-                            File.WriteAllText($"{fileNamePrefix}-{i}-pdf-dump.txt", pageContent);
-                            File.WriteAllLines($"{fileNamePrefix}-{i}-table-w-header.txt", rows.Select(x =>
-                                string.Join(",", x.Select(str =>
-                                {
-                                    if (str.Contains(',') || str.Contains('"'))
+                            if (includeDump)
+                                File.WriteAllText($"{fileNamePrefix}-{i}-pdf-dump.txt", pageContent);
+
+                            if (includeTable)
+                                File.WriteAllLines($"{fileNamePrefix}-{i}-table-w-header.txt", rows.Select(x =>
+                                    string.Join(",", x.Select(str =>
                                     {
-                                        return $"\"{str.Replace("\"", "\"\"")}\"";
-                                    }
+                                        if (str.Contains(',') || str.Contains('"'))
+                                        {
+                                            return $"\"{str.Replace("\"", "\"\"")}\"";
+                                        }
 
-                                    return str;
-                                }))));
+                                        return str;
+                                    }))));
 
-                            File.WriteAllLines($"{fileNamePrefix}-{i}-info-w-header.txt",
+                            if (includeInfo)
+                                File.WriteAllLines($"{fileNamePrefix}-{i}-info-w-header.txt",
                                 otherKeyValueData.Select(kv => $"{kv.Key}{kv.Value}"));
                         }
                         else
