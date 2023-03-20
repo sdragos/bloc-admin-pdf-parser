@@ -192,7 +192,11 @@ namespace BlocAdminPdfParser
                                             return $"\"{str.Replace("\"", "\"\"")}\"";
                                         }
 
-                                        return str;
+                                        return str
+                                            //Due to the banners from the PDF some text fields are duplicated and stacked on top of each other,
+                                            //leading to duplication and to exclusion of important info. Below you can find workarounds.
+                                            .Replace("En. En.", "En. Electrica")
+                                            .Replace("Luna Luna", "Luna Curenta");
                                     }))));
 
                             if (includeInfo)
