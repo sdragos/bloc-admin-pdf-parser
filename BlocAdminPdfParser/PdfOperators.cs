@@ -1,0 +1,81 @@
+﻿using System;
+
+namespace BlocAdminPdfParser
+{
+    public class PdfOperator
+    {
+        public const String b = "b";
+        public const String B = "B";
+        public const String bStar = "b*";
+        public const String BStar = "B*";
+        public const String BDC = "BDC";
+        public const String BI = "BI";
+        public const String BMC = "BMC";
+        public const String BT = "BT";
+        public const String BX = "BX";
+        public const String c = "c";
+        public const String cm = "cm";
+        public const String CS = "CS";
+        public const String cs = "cs";
+        public const String d = "d";
+        public const String d0 = "d0";
+        public const String d1 = "d1";
+        public const String Do = "Do";
+        public const String DP = "DP";
+        public const String EI = "EI";
+        public const String EMC = "EMC";
+        public const String ET = "ET";
+        public const String EX = "EX";
+        public const String f = "f";
+        public const String F = "F";
+        public const String fStar = "f*";
+        public const String G = "G";
+        public const String g = "g";
+        public const String gs = "gs";
+        public const String h = "h";
+        public const String i = "i";
+        public const String ID = "ID";
+        public const String j = "j";
+        public const String J = "J";
+        public const String k = "k";
+        public const String K = "K";
+        public const String l = "l";
+        public const String m = "m";
+        public const String M = "M";
+        public const String MP = "MP";
+        public const String n = "n";
+        public const String q = "q";
+        public const String Q = "Q";
+        public const String re = "re";
+        public const String RG = "RG";
+        public const String rg = "rg";
+        public const String ri = "ri";
+        public const String s = "s";
+        public const String S = "S";
+        public const String SC = "SC";
+        public const String sc = "sc";
+        public const String SCN = "SCN";
+        public const String scn = "scn";
+        public const String sh = "sh";
+        public const String TStar = "TStar";
+        public const String Tc = "Tc";
+        public const String Td = "Td";
+        public const String TD = "TD";
+        public const String Tf = "Tf";
+        public const String Tj = "Tj";
+        public const String TJ = "TJ";
+        public const String TL = "TL";
+        public const String Tm = "Tm";
+        public const String Tr = "Tr";
+        public const String Ts = "Ts";
+        public const String Tw = "Tw";
+        public const String Tz = "Tz";
+        public const String v = "v";
+        public const String w = "w";
+        public const String W = "W";
+        public const String WStar = "W*";
+        public const String y = "y";
+        public const String quote = "'";
+        public const String doubleQuote = "\"";
+    }
+}
